@@ -1,0 +1,156 @@
+/* body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+
+
+header {
+  /* height: 40px; */
+  background-color: #f0f0f0; /* Header background color */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+}
+
+#title{
+  margin-bottom: 0px;
+}
+
+#subtitle{
+  margin-top: 10px;
+
+}
+
+h1{
+  font-size : 3rem;
+}
+
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+
+ul, ol{
+  margin: 0;
+  padding: 0;
+}
+
+.day > a{
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 230px; /* Adjust this as needed */
+  height: 160px; /* Adjust this as needed */
+  border-radius: 10px;
+  margin: 7px 14px;
+  font-size: 2rem;
+  color:#e3f2fd;
+  background-color: #2979ff;
+}
+
+.day >a:hover{
+  background-color: #009688;
+}
+
+.day > a:visited{
+  color:#e3f2fd ;
+}
+
+.container > main{
+  display:flex;
+  flex:6;
+  flex-wrap: wrap; 
+}
+
+.container > aside{
+  display:flex;
+  flex:1;
+  justify-content: center;
+  background-color: #ccf5ff;
+  padding: 20px;
+}
+
+.word-container{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: cadetblue;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  /* height: 60px; */
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10%;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  padding: 0 10%; /* 좌우 20% 여백 추가 */
+}
+
+main {
+  flex: 8;
+  background-color: #e6f7ff;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 140px;
+  border-radius: 10px;
+  margin: 14px;
+  font-size: 1.6rem;
+  color: #e3f2fd;
+  background-color: #2979ff;
+  cursor: pointer;
+}
+
+.word:hover {
+  background-color: #009688;
+  .kor{
+    display:flex;
+    font-size:1rem;
+  }
+  .eng{
+    display:none;
+  }
+}
+
+.word:active {
+  background-color:#ff5722;
+}
+
+nav > a:not(:last-child)::after{ 
+  content:' | ';
+}
+
+.kor{
+  display:none;
+}
