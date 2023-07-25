@@ -10,77 +10,100 @@
 
 
 header {
-  /* height: 40px; */
-  background-color: #f0f0f0; /* Header background color */
+  background-color: #f0f0f0;
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   flex-direction: column;
+  margin: 16px 10%;
 }
 
-#title{
-  margin-bottom: 0px;
+header > nav {
+  margin:10px;
 }
 
-#subtitle{
+.title-row{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:3rem;
+  width:100%;
+  /* margin: 10px 0; */
+}
+
+
+#prev-btn, #next-btn{
+  color:black;
+  margin: 0px 20px;
+}
+
+
+#subtitle {
   margin-top: 10px;
-
 }
 
-h1{
-  font-size : 3rem;
+h1 {
+  font-size: 3rem;
+  margin:0px;
 }
 
-a{
+h5{
+  margin:10px;
+  font-size:1.2rem;
+}
+
+a {
   text-decoration: none;
 }
-li{
+
+li {
   list-style: none;
 }
 
-ul, ol{
+ul,
+ol {
   margin: 0;
   padding: 0;
 }
 
-.day > a{
+.day>a {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  width: 230px; /* Adjust this as needed */
-  height: 160px; /* Adjust this as needed */
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  height: 160px;
   border-radius: 10px;
   margin: 7px 14px;
   font-size: 2rem;
-  color:#e3f2fd;
+  color: #e3f2fd;
   background-color: #2979ff;
 }
 
-.day >a:hover{
+.day>a:hover {
   background-color: #009688;
 }
 
-.day > a:visited{
-  color:#e3f2fd ;
+.day>a:visited {
+  color: #e3f2fd;
 }
 
-.container > main{
-  display:flex;
-  flex:6;
-  flex-wrap: wrap; 
+.container>main {
+  display: flex;
+  flex: 6;
+  flex-wrap: wrap;
 }
 
-.container > aside{
-  display:flex;
-  flex:1;
+.container>aside {
+  display: flex;
+  flex: 1;
   justify-content: center;
   background-color: #ccf5ff;
   padding: 20px;
 }
 
-.word-container{
-  display:flex;
+.word-container {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   background-color: cadetblue;
@@ -94,19 +117,13 @@ body {
   min-height: 100vh;
 }
 
-header {
-  /* height: 60px; */
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 10%;
-}
+
 
 .container {
   flex: 1;
   display: flex;
-  padding: 0 10%; /* 좌우 20% 여백 추가 */
+  padding: 0 10%;
+  /* 좌우 20% 여백 추가 */
 }
 
 main {
@@ -134,23 +151,38 @@ main {
 
 .word:hover {
   background-color: #009688;
-  .kor{
-    display:flex;
-    font-size:1rem;
+
+  .kor {
+    display: flex;
+    font-size: 1rem;
   }
-  .eng{
-    display:none;
+
+  .eng {
+    display: none;
   }
 }
 
 .word:active {
-  background-color:#ff5722;
+  background-color: #ff5722;
+
+  .example{
+    display: flex;
+    font-size: 1rem;
+  }
+
+  .eng, .kor {
+    display: none;
+  }
 }
 
-nav > a:not(:last-child)::after{ 
-  content:' | ';
+nav>a:not(:last-child)::after {
+  content: ' | ';
 }
 
-.kor{
+.kor {
+  display: none;
+}
+
+.example {
   display:none;
 }
