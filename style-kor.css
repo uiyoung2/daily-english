@@ -1,0 +1,57 @@
+.word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 240px;
+  height: 120px;
+  border-radius: 10px;
+  margin: 14px;
+  color: #e3f2fd;
+  background-color: #0583f2;
+  cursor: pointer;
+}
+
+.word:hover {
+  background-color: #3abeb0;
+
+  .eng{
+    display: flex;
+    font-size: 3rem;
+  }
+
+  .kor{
+    display: none;
+  }
+}
+
+.word:active {
+  background-color: #ff8266;
+
+  .example {
+    display: flex;
+    font-size: 1rem;
+  }
+
+  .eng,
+  .kor {
+    display: none;
+  }
+}
+
+.kor{
+  display: flex;
+  font-size: 1.4rem;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.eng,
+.example {
+  display: none;
+  text-align: center;
+}
+
+.eng {
+  font-family: 'Laila', sans-serif;
+  font-family: 'Nanum Pen Script', cursive;
+}
