@@ -57,6 +57,8 @@ const knownWords = [
   'has',
 ];
 
+const API_KEY = '';
+
 const radioButtons = document.querySelectorAll('input[name="country"]');
 radioButtons.forEach((element) => {
   element.addEventListener('change', async (e) => {
@@ -69,7 +71,7 @@ radioButtons.forEach((element) => {
 
 async function getNews(country) {
   try {
-    const response = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY_입력}`);
+    const response = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY}`);
     const data = await response.json();
     return data;
   } catch (error) {
