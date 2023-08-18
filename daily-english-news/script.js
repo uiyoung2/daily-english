@@ -176,9 +176,84 @@ function addToKnownWords(word) {
   renderNews(articles);
   wordModal.hide();
 }
+const testData = (newsData = {
+  status: 'ok',
+  totalResults: 38,
+  articles: [
+    {
+      source: {
+        id: 'usa-today',
+        name: 'USA Today',
+      },
+      author: ', USA TODAY',
+      title: "England vs Australia live updates: Score, highlights Women's World Cup - USA TODAY",
+      description:
+        "England leads Australia 1-0 at halftime of today's World Cup semifinal. Ella Toone scored the Lionesses' goal in the 36th-minute against the Matildas.",
+      url: 'https://www.usatoday.com/story/sports/soccer/worldcup/2023/08/16/england-vs-australia-womens-world-cup-semifinal-live-updates/70600807007/',
+      urlToImage:
+        'https://www.gannett-cdn.com/authoring/authoring-images/2023/08/16/USAT/70601015007-gty-1618456780.JPG?auto=webp&crop=2608,1474,x0,y132&format=pjpg&width=1200',
+      publishedAt: '2023-08-16T10:18:45Z',
+      content:
+        'England has been itching for this World Cup game for four months. That it could end Australias party just adds to the drama.\r\nThe second World Cup semifinal is billed as a blockbuster, and with good … [+8587 chars]',
+    },
+    {
+      source: {
+        id: null,
+        name: 'Usf.edu',
+      },
+      author: 'Leila Fadel, Tom Dreisbach',
+      title:
+        'NPR investigation reveals significant failures at immigrant detention facilities - WUSF Public Media',
+      description:
+        'NPR obtained confidential files from the U.S. government which reveal "barbaric" and "negligent" treatment at ICE detention centers.',
+      url: 'https://wusfnews.wusf.usf.edu/2023-08-16/npr-investigation-reveals-significant-failures-at-immigrant-detention-facilities',
+      urlToImage: null,
+      publishedAt: '2023-08-16T09:10:00Z',
+      content:
+        'NPR obtained confidential files from the U.S. government which reveal "barbaric" and "negligent" treatment at ICE detention centers.\r\nCopyright 2023 NPR',
+    },
+    {
+      source: {
+        id: 'politico',
+        name: 'Politico',
+      },
+      author: null,
+      title: 'Sinema takes on Schumer, Jeffries and the White House over the border - POLITICO',
+      description:
+        "Border-state Democrats are frustrated to see New York claim most of a recent migrant relief infusion. But Arizona's formerly Democratic senator is speaking out the loudest.",
+      url: 'https://www.politico.com/news/2023/08/16/sinema-takes-on-schumer-jeffries-border-00111355',
+      urlToImage:
+        'https://static.politico.com/14/f6/7830df9243efb1bbe0c7893a7108/kyrsten-sinema-54345.jpg',
+      publishedAt: '2023-08-16T09:00:00Z',
+      content:
+        'But only Sinema is aiming specific complaints at Senate Majority Leader Chuck Schumer, House Minority Leader Hakeem Jeffries and the Biden administration.\r\nEarlier this month in Yuma, Ariz., Sinema s… [+6380 chars]',
+    },
+    {
+      source: {
+        id: 'reuters',
+        name: 'Reuters',
+      },
+      author: 'Reuters',
+      title:
+        "China's economic woes mount as trust firm misses payments, home prices fall - Reuters",
+      description:
+        "Missed payments on investment products by a leading Chinese trust firm and a fall in home prices have added to worries that China's deepening property sector crisis is stifling what little momentum the economy has left.",
+      url: 'https://www.reuters.com/world/china/chinas-new-home-prices-fall-first-time-this-year-2023-08-16/',
+      urlToImage:
+        'https://www.reuters.com/resizer/YT4FBQ-iL8VAA8ddgz2O9VOBZsk=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/MT7K47ZGTJKPXM4NPWFQKXKF24.jpg',
+      publishedAt: '2023-08-16T08:28:00Z',
+      content:
+        "BEIJING/HONG KONG, Aug 16 (Reuters) - Missed payments on investment products by a leading Chinese trust firm and a fall in home prices have added to worries that China's deepening property sector cri… [+5861 chars]",
+    },
+  ],
+});
 
 async function init() {
-  const newsData = await getNews('us');
+  let newsData = await getNews('us');
+  if (newsData.status === 'error') {
+    newsData = { ...testData };
+  }
+
   articles = newsData.articles;
   renderNews(newsData.articles);
 }
